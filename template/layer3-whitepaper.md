@@ -154,7 +154,7 @@ A cross-currency swap's (XCS's) effective description is a derivative contract, 
 
 # Conclusions
 
-Blah blah [siehe @jones2016, S. 33-35; auch @sahle2015, Kap. 1].
+Blah blah [See @lightning, Page 2].
 
 # References
 
