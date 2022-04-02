@@ -77,6 +77,11 @@ header-includes:
 
 # Introduction
 
+Since Bitcoin and Binance, many Engineers and traders work together in crypto,
+While most trader only use CEX, the trading occurs in isolated silos, each CEX / DEX has their own markets and unlike traditional finance those markets are not global.
+
+Blockchain has brought decentralized computation, but it far from being able scale to what traditional finance is today, due to the consensus algorithm which requires node to agree on the version of the state.
+
 # Background
 
 Crypto-currency trade is real, but there is no ECN and clearing house to help scaling and interconnecting the whole industry
@@ -103,6 +108,10 @@ Table: Example of table information
 
 ### Qredo
 
+### LayerZero
+
+Slow, amplify queries, this design illustrate well the complexity of synchronization between chains.
+
 # Design
 
 Mesh network
@@ -112,6 +121,9 @@ Mesh network
 ## Network participants
 
 ### Retail Brokers
+
+A small exchange, located on a specific country or region, comply with local regulations
+In our network we define brokers as non-custodial business.
 
 ### Market makers
 
