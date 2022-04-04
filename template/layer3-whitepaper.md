@@ -78,13 +78,13 @@ header-includes:
 # Introduction
 
 Since Bitcoin and Binance, many Engineers and traders work together in crypto,
-While most trader only use CEX, the trading occurs in isolated silos, each CEX / DEX has their own markets and unlike traditional finance those markets are not global.
+While most traders only use CEXs (Centralized EXchanges), the trading occurs in isolated silos, each CEX and DEX (Decentralize EXchange) has its own list of markets and unlike traditional finance those markets are not global.
 
-Blockchain has brought decentralized computation, but it far from being able scale to what traditional finance is today, due to the consensus algorithm which requires node to agree on the version of the state.
+Blockchain has brought decentralized computation, but it's far from being able scale to what traditional finance is today, due to the consensus algorithm which requires nodes to agree on the version of the state.
 
 # Background
 
-Crypto-currency trade is real, but there is no ECN and clearing house to help scaling and interconnecting the whole industry
+Crypto-currency trade is real, but there is no ECN (Electronic Communication Network) and clearing house to help scaling and interconnecting the whole industry
 
 ## Related Work
 
@@ -98,11 +98,23 @@ Table: Example of table information
 
 ### Centralized Exchange
 
-### DyDx
+#### Security concerns
+
+Centralized exchanges are fully in charge of the deposited users assets. It means users have to fully trust them to secure correctly platform wallets and proccess trades in fairly maner. Security has been taken seriously by big exchanges recently but it comes at a great cost, however we can still read news of exchanges being hacked and users funds being drained by attackers. Most of small exchange can't afford the cost of securing correctly users funds.
+
+#### Support of blockchains
+
+To keep a centralized exchange running, a lot of operations are needed. We just mentioned the security aspect which require a full-time focus by a dedicated team. The support of many blockchains is also very complicated and leads to high cost, each of them needs to be monitored specifically to make sure nodes and platform applications stay synchronized and process blocks in real time. The load of some chains sometime jumps quickly with the cost of transactions, this can lead to withdrawals not being proceed or very slowly, overall the gas price for withdrawals transactions and deposits processing might have to be adjusted frequently.
+
+#### Compliance
+
+For an exchange to comply with local regulations can be very complicated.  Small exchanges will probably prefer to target a single market and comply with a single regulator. An other approach is to simply register the company in a country where they can operate without any regulation, this solution expose users to the goodwill of the platform operator, regultor rules being usually made to protect customers.
 
 ### Uniswap
 
 ### Lightning Network
+
+### DyDx
 
 ### CELR Network
 
@@ -110,30 +122,32 @@ Table: Example of table information
 
 ### LayerZero
 
-Slow, amplify queries, this design illustrate well the complexity of synchronization between chains.
+Slow, amplify queries, this design illustrates well the complexity of synchronization between chains.
 
 # Design
 
 Mesh network
 
-![The cat.](cat.jpg 'Logo Title Text 1')
+![Yellow network overview](network-overview.png 'Financial mesh network')
 
 ## Network participants
 
-### Retail Brokers
+### Retail brokers
 
 A small exchange, located on a specific country or region, comply with local regulations
 In our network we define brokers as non-custodial business.
 
 ### Market makers
 
+Market makers are providing liquidity to the network, they create and maintain open orders to allow users to access to the best offers possible. They are getting fees from trades.
+
 ### Exchanges
 
 ### Custodian
 
-## System Components
+## System components
 
-### Network Nodes
+### Network nodes
 
 ### Adjudicators
 
