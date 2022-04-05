@@ -144,6 +144,12 @@ Transparency of blockchain transactions and the fact that Ethereum order transac
 
 Such bots are monitoring the blockchain and the in-memory transactions pool containing (transactions not yet mined in a block) for incoming swap transactions. They check slippage tolerance allowed by the user, calculate the cost of front-running transactions, when profitable they execute a transaction just before the user by setting a higher gas price and finally a transaction just after the user to take the profit.
 
+#### Comply with local regulations
+
+Decentralized application are accessible by everyone on the planet the same way, without any difference between users. This feature allows anyone to access crypto-currencies wallets and use those solutions, this is a very powerful feature which gives access to people who can't open a bank account to crypto-currencies and decentralized finance.
+
+Nevertheless each country has specific regulations in place applied to financial products, thus those fully open and restrictionless solutions are violating those rules.
+
 ### Lightning Network
 
 ### DyDx
@@ -186,6 +192,35 @@ Market makers are providing liquidity to the network, they create and maintain o
 ### Custodians
 
 ## Protocol
+
+Yellow network allows brokers to peer liquidity from one to another. A broker peering with another broker on a market will display orders from the other broker in his orderbook, this will extend his offering and increase the overall liquidity available for his users.
+
+### Collateral
+
+Both exchanges have to lock a collateral in order to guaranty they are solvable for the other peer. Different currencies can be used as collateral, a mix of stable coins and major crypto-currencies tokens is probably a good choice for the platform in order to keep a relative stability of this collateral value while the market swings.
+
+### B2B (Broker to Broker) liquidity channel
+
+Brokers are using a state channel protocol [2] to keep track of assets owned from one broker to an other. This technology allows a secure track of funds without the need of any on-chain transaction. It makes the trading process between two brokers very fast and secure.
+
+### Remote order matching
+
+When a user matches a remote order, the platform will use state channel
+
+### Settlement
+
+Every once for a while brokers will perform a settlement process to finally transfer assets owns to each other. A settlement process can be triggered by any broker at any time. A broker can decide to settle if it needs some asset liquidity, to honor a withdrawal request for example. An other reason of triggering a settlement is the value of assets being hold from one to another getting unbalanced, if the difference of assets value between two brokers reach the value of the collateral it's getting urgent for one broker to trigger the settlement.
+
+### Multi-chain & Multi-custody support
+
+
+Pluggeable custodians solutions
+
+- Gnosis safe
+- Qredo
+- Cobo
+- Fireblocks
+
 
 # Finance
 
