@@ -61,7 +61,7 @@ header-includes:
   - |
     ```{=latex}
     % keep figures where there are in the text
-    \usepackage{float} 
+    \usepackage{float}
     \floatplacement{figure}{H}
     ```
   - |
@@ -110,7 +110,39 @@ To keep a centralized exchange running, a lot of operations are needed. We just 
 
 For an exchange to comply with local regulations can be very complicated.  Small exchanges will probably prefer to target a single market and comply with a single regulator. An other approach is to simply register the company in a country where they can operate without any regulation, this solution expose users to the goodwill of the platform operator, regultor rules being usually made to protect customers.
 
+#### Market making & Access to liquidity
+
+Running an exchange with many markets imposes to maintain orderbooks with tight spreads in order to provide the best offers possible to users. It also requires deep liquidity in the orderbook to avoid big price moves in case of sporadic big demand on a market.
+
+Centralized exchanges usually delegate this duty to "market makers", this service can be very expensive and still the exchange might have to provide a big part of the liquidity to be injected in the orderbook.
+
 ### Uniswap
+
+#### short history
+
+Uniswap is a decentralized exchange application, launched in 2018 [@uniswap-history] it's the first DEX to gain a significant traction on Ethereum mainnet by August 2020. Since then many clones and other decentralized applications were launched on many blockchains and used by millions of users to swap tokens, lend/borrow crypto assets, bridge funds between blockchains and many more use cases.
+
+Uniswap paved the way of DeFi (Decentralized Finance).
+
+#### Security, Auditability
+
+It brought many advantages compared to centralized exchanges. The exchange software is fully implemented in smart-contracts that are deployed on the blockchain, thus anyone can read how it works, many audits are performed by independants parties, many DeFi application were left with breaches and funds were exploited, but over time the security of those applications tend to be proven.
+
+#### Automatic market making
+
+Anyone can provide liquidity to Uniswap markets (AKA pools), and receive a revenue share from fees collected during trading (AKA swaps). Moreover the price of assets is managed automatically, every trade impacts the price up or down depending if it's a ask or a bid, since the version one the protocol evolved to be more resilient in v2 and to use more effectively the liquidity in v3 [@angeris2020improved].
+
+Uniswap protocol provided an elegant solution to the problem of market making and access to liquidity.
+
+#### Performances
+
+The success of those applications lead to traffic jams in Ethereum network, cost of transactions have been growing to reach unsustainable levels. DEX and DeFi application are facing the limitation of blockchains throughput. Many projects claim to solve the problem of blockchains scalibity, some drastically improve the throughtput of transaction like Polygon or Solana.
+
+#### Front running bots
+
+Transparency of blockchain transactions and the fact that Ethereum order transactions by gas price exposes users of DEXes to front-run bots [@daian2019flash].
+
+Such bots are monitoring the blockchain and the in-memory transactions pool containing (transactions not yet mined in a block) for incoming swap transactions. They check slippage tolerance allowed by the user, calculate the cost of front-running transactions, when profitable they execute a transaction just before the user by setting a higher gas price and finally a transaction just after the user to take the profit.
 
 ### Lightning Network
 
