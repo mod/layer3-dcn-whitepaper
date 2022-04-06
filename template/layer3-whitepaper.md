@@ -100,7 +100,7 @@ Table: Example of table information
 
 #### Security concerns
 
-Centralized exchanges are fully in charge of the deposited users assets. It means users have to fully trust them to secure correctly platform wallets and proccess trades in fairly maner. Security has been taken seriously by big exchanges recently but it comes at a great cost, however we can still read news of exchanges being hacked and users funds being drained by attackers. Most of small exchange can't afford the cost of securing correctly users funds.
+Centralized exchanges are fully in charge of the deposited users assets. It means users have to fully trust them to secure correctly platform wallets and process trades in fairly manner. Security has been taken seriously by big exchanges recently but it comes at a great cost, however we can still read news of exchanges being hacked and users funds being drained by attackers. Most of small exchange can't afford the cost of securing correctly users funds.
 
 #### Support of blockchains
 
@@ -108,7 +108,7 @@ To keep a centralized exchange running, a lot of operations are needed. We just 
 
 #### Compliance
 
-For an exchange to comply with local regulations can be very complicated.  Small exchanges will probably prefer to target a single market and comply with a single regulator. An other approach is to simply register the company in a country where they can operate without any regulation, this solution expose users to the goodwill of the platform operator, regultor rules being usually made to protect customers.
+For an exchange to comply with local regulations can be very complicated.  Small exchanges will probably prefer to target a single market and comply with a single regulator. An other approach is to simply register the company in a country where they can operate without any regulation, this solution expose users to the goodwill of the platform operator, regulator rules being usually made to protect customers.
 
 #### Market making & Access to liquidity
 
@@ -120,13 +120,13 @@ Centralized exchanges usually delegate this duty to "market makers", this servic
 
 #### short history
 
-Uniswap is a decentralized exchange application, launched in 2018 [@uniswap-history] it's the first DEX to gain a significant traction on Ethereum mainnet by August 2020. Since then many clones and other decentralized applications were launched on many blockchains and used by millions of users to swap tokens, lend/borrow crypto assets, bridge funds between blockchains and many more use cases.
+Uniswap is a decentralized exchange application, launched in 2018 [@uniswap-history] it's the first DEX to gain a significant traction on Ethereum mainnet by August 2020. Since then many clones and other decentralized applications were launched on many blockchains and used by millions of users to swap tokens, lend/borrow crypto-currencies assets, bridge funds between blockchains and many more use cases.
 
 Uniswap paved the way of DeFi (Decentralized Finance).
 
 #### Security, Auditability
 
-It brought many advantages compared to centralized exchanges. The exchange software is fully implemented in smart-contracts that are deployed on the blockchain, thus anyone can read how it works, many audits are performed by independants parties, many DeFi application were left with breaches and funds were exploited, but over time the security of those applications tend to be proven.
+It brought many advantages compared to centralized exchanges. The exchange software is fully implemented in smart-contracts that are deployed on the blockchain, thus anyone can read how it works, many audits are performed by independents parties, many DeFi application were left with breaches and funds were exploited, but over time the security of those applications tend to be proven.
 
 #### Automatic market making
 
@@ -136,7 +136,7 @@ Uniswap protocol provided an elegant solution to the problem of market making an
 
 #### Performances
 
-The success of those applications lead to traffic jams in Ethereum network, cost of transactions have been growing to reach unsustainable levels. DEX and DeFi application are facing the limitation of blockchains throughput. Many projects claim to solve the problem of blockchains scalibity, some drastically improve the throughtput of transaction like Polygon or Solana.
+The success of those applications lead to traffic jams in Ethereum network, cost of transactions have been growing to reach unsustainable levels. DEX and DeFi application are facing the limitation of blockchains throughput. Many projects claim to solve the problem of blockchains scalibity, some drastically improve the throughput of transaction like Polygon or Solana.
 
 #### Front running bots
 
@@ -172,7 +172,7 @@ Mesh network
 
 ### Retail brokers
 
-A small exchange, located on a specific country or region, comply with local regulations
+A small exchange, located on a specific country or region, comply with local regulations.
 In our network we define brokers as non-custodial business.
 
 ### Market makers
@@ -181,7 +181,19 @@ Market makers are providing liquidity to the network, they create and maintain o
 
 ### Exchanges
 
-### Custodian
+Exchanges are big players of the network, they usually target a global audience and are regulated in many different countries. They can list exclusive tokens to the network and bring some market makers.
+They can also manage themselves the platform custody. In short those actors are managing all roles of network participants, they don't absolutely need to connect to others brokers, still it can only be better for their customers to bring more liquidity and offers on markets.
+
+### Custodians
+
+Custodians are in charge of holding customers funds securely. Additionally they allow the broker to easily connect to multiple blockchains, depending on their current supported blockchains.
+
+We plan to support following custodians as a start:
+
+- Qredo
+- Cobo
+- Fireblocks
+- Gnosis safe (decentralized)
 
 ## System components
 
@@ -201,11 +213,13 @@ Both exchanges have to lock a collateral in order to guaranty they are solvable 
 
 ### B2B (Broker to Broker) liquidity channel
 
-Brokers are using a state channel protocol [2] to keep track of assets owned from one broker to an other. This technology allows a secure track of funds without the need of any on-chain transaction. It makes the trading process between two brokers very fast and secure.
+Brokers are using a state channel protocol [@perun2] to keep track of assets owned from one broker to another. This technology allows a secure track of funds without the need of on-chain transaction for every trade. It makes the trading process between two brokers very fast and secure.
+
+To open a state-channel, brokers need to agree on an amount of YELLOW tokens to be used as collateral. Once they have an agreement on the amount and they both deposited the tokens, the state-channel is active and they can start trading.
 
 ### Remote order matching
 
-When a user matches a remote order, the platform will use state channel
+When a user order matches an order from a peer-broker, the platform will use the active state-channel with the peer to perform the trade and account the liabilities of one another broker.
 
 ### Settlement
 
@@ -213,14 +227,7 @@ Every once for a while brokers will perform a settlement process to finally tran
 
 ### Multi-chain & Multi-custody support
 
-
-Pluggeable custodians solutions
-
-- Gnosis safe
-- Qredo
-- Cobo
-- Fireblocks
-
+The broker can connect to many custodians solutions, each custody solution have a different list of supported blockchains. The broker will benefit from supported blockchains of his custodies. Once connected to a custody, users will be able to deposit and withdraw funds from all supported blockchains.
 
 # Finance
 
@@ -230,12 +237,11 @@ Pluggeable custodians solutions
 
 ## Cross-currency swap
 
-A cross-currency swap's (XCS's) effective description is a derivative contract, agreed between two counterparties
+A cross-currency swap's (XCS's) effective description is a derivative contract, agreed between two counterparts
 , which specifies the nature of an exchange of payments benchmarked against two interest rate indexes denominated in two different currencies. It also specifies an initial exchange of notional currency in each different currency and the terms of that repayment of notional currency over the life of the swap
 
 # Conclusions
 
-Blah blah [See @lightning, Page 2].
 
 # References
 
