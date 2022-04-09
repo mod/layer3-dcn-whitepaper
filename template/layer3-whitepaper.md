@@ -151,13 +151,15 @@ Decentralized application are accessible by everyone on the planet the same way,
 
 Nevertheless each country has specific regulations in place applied to financial products, thus those fully open and restrictionless solutions are violating those rules.
 
-### Lightning Network
+### Lightning Network [@poon2016bitcoin]
 
-### DyDx
+Lightning network is a *layer 2* solution for Bitcoin network. It was proposed as a solution to the scalabity problem of Bitcoin network. It uses payments channels to perform any number of off-chain transactions. A payment channel is initiated by an on-chain funding transaction, then it's followed by any number of off-chain transactions, finally to commit balances a settlement transaction is performed on-chain.
 
-### CELR Network
+### DyDx [@juliano2017dydx]
 
-### Qredo
+### CELR Network [@dong2018celer]
+
+### Qredo [@mccuskerqredo]
 
 ### LayerZero
 
