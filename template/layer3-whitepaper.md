@@ -88,14 +88,6 @@ Crypto-currency trade is real, but there is no ECN (Electronic Communication Net
 
 ## Related Work
 
-| Spalte 1            | Spalte 2            | Spalte 3            |
-| ------------------- | ------------------- | ------------------- |
-| Warum mit innerhalb | Warum mit innerhalb | Warum mit innerhalb |
-| dem dieser folgte,  | dem dieser folgte,  | dem dieser folgte,  |
-| so Information.     | so Information.     | so Information.     |
-
-Table: Example of table information
-
 ### Centralized Exchange
 
 #### Security concerns
@@ -202,13 +194,19 @@ We plan to support following custodians as a start:
 
 ### Network nodes
 
-### Adjudicators
+### Adjudicator
 
-### Custodians
+The adjudicator is a smart contract used by brokers to validate a settlement, it verifies that the last state transition is valid and signed by both brokers. Being a smart contract ensure brokers rules transparency and they won't change over time without both parties to agree to upgrade to a newer version of the protocol.
+
+### Custodian
+
+Custodian are responsible of holding users' funds securely. It can be an external provider or a smart contract. Custodian are using a set or rules to release funds, each technology can provide different set of features to increase the security of the funds and make sure the user requesting a withdrawal is the real initiator of the request and make sure he didn't performed any kind of fraud.
 
 ## Protocol
 
-Yellow network allows brokers to peer liquidity from one to another. A broker peering with another broker on a market will display orders from the other broker in his orderbook, this will extend his offering and increase the overall liquidity available for his users.
+![](state-channel-flow.png)
+
+Yellow network allows brokers to peer liquidity from one to another. A broker peering with another broker on a market will display orders from the other broker in his orderbook, this extends his offering and increase the overall liquidity available for his users. When a user takes an offer coming from another broker, brokers exchange liabilities using state channel protocol to ensure both agree on the accounting change. Later a settlement process can be initiated by any broker to lower their risk and move partial or all funds owed from one to another.
 
 ### Collateral
 
