@@ -84,7 +84,7 @@ Blockchain has brought decentralized computation, but it's far from being able s
 
 # Background
 
-Crypto-currency trade is real, but there is no ECN (Electronic Communication Network) and clearing house to help scaling and interconnecting the whole industry
+Crypto-currency trading is now a reality and is enjoying a fast rate of user adoption all over the world. Since Bitcoin many alternative projects were launched and users have now a large choice of different blockchains and many decentralized applications. New challenges appear to simplify the user journey in this wild wide web 3.0. Bridges is ones of several technologies brought to interconnect blockchains, it happened to suffer from a lack of decentralization, ERC20 native connection from one to another chain and a need of large liquidity for many tokens on every chain to satisfy the users demand.
 
 ## Related Work
 
@@ -145,17 +145,19 @@ Nevertheless each country has specific regulations in place applied to financial
 
 ### Lightning Network [@poon2016bitcoin]
 
-Lightning network is a *layer 2* solution for Bitcoin network. It was proposed as a solution to the scalabity problem of Bitcoin network. It uses payments channels to perform any number of off-chain transactions. A payment channel is initiated by an on-chain funding transaction, then it's followed by any number of off-chain transactions, finally to commit balances a settlement transaction is performed on-chain.
+Lightning network is a *layer 2* solution for Bitcoin network. It was proposed as a solution to the scalability problem of Bitcoin network. It leverages state channel technology to be used as payments channels to perform any number of off-chain transactions. A payment channel is initiated by an on-chain funding transaction, then it's followed by any number of off-chain transactions, finally to commit balances a settlement transaction is performed on-chain; while lightning network introduce real-time fund transfer in blockchain, our protocol leverage the same technology for high frequency trading.
 
 ### DyDx [@juliano2017dydx]
 
-### CELR Network [@dong2018celer]
+DyDx is a trading platform of derivatives markets. It combines the speed of centralized orderbook and the transparency of decentralized applications. The result is a more secure and faster software architecture; The downside is that it's limited to Ethereum's users.
 
 ### Qredo [@mccuskerqredo]
 
+Qredo focuses on securing digital assets using MPC [REFERENCE NEEDED], eliminating the sensitive private key from the signature computation. It also allows settlements by updating an internal ledger entry without costly transaction on the blockchain [TO BE CONFIRMED]. While Qredo brings state of the art security for digital assets it doesn't facilitate high frequency trading.
+
 ### LayerZero
 
-Slow, amplify queries, this design illustrates well the complexity of synchronization between chains.
+LayerZero provides an SDK which enable cross-chains transactions; but it requires to modify existing smart contracts and doesn't solve performance issues, it actually increase the numbers of transactions on already congested chains.
 
 # Design
 
@@ -193,6 +195,8 @@ We plan to support following custodians as a start:
 ## System components
 
 ### Network nodes
+
+Network nodes are operated by brokers, they have local markets and their own connections to blockchains and custodians; they interconnect with different brokers to bring liquidity to their markets.
 
 ### Adjudicator
 
@@ -234,7 +238,19 @@ The broker can connect to many custodians solutions, each custody solution have 
 
 ## ECN
 
+Wikipedia:
+
+```
+An electronic communication network (ECN) is a type of computerized forum or network that facilitates the trading of financial products outside traditional stock exchanges. An ECN is generally an electronic system that widely disseminates orders entered by market makers to third parties and permits the orders to be executed against in whole or in part. The primary products that are traded on ECNs are stocks and currencies. ECNs are generally passive computer-driven networks that internally match limit orders and charge a very small per share transaction fee (often a fraction of a cent per share).
+```
+
+ECN facilitates access to brokers to global financial markets; Yellow network protocol forms a decentralized ECN for digital assets. 
+
 ## Clearing house
+
+[PASTE DEFINITION HERE]
+
+Facilitates cross brokerage transactions; Yellow network brings this functionality using state channel technology and settlement using a smart contract. 
 
 ## Cross-currency swap
 
@@ -242,6 +258,10 @@ A cross-currency swap's (XCS's) effective description is a derivative contract, 
 , which specifies the nature of an exchange of payments benchmarked against two interest rate indexes denominated in two different currencies. It also specifies an initial exchange of notional currency in each different currency and the terms of that repayment of notional currency over the life of the swap
 
 # Conclusions
+
+By decoupling trading and settlement Yellow network protocol makes possible decentralization of high frequency trading and widen the access of a great variety of assets, including digital and traditional assets.
+
+
 
 
 # References
