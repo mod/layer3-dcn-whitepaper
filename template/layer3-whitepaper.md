@@ -88,6 +88,7 @@ Crypto-currency trading is now a reality and is enjoying a fast rate of user ado
 
 ## Related Work
 
+
 ### Centralized Exchange
 
 #### Security concerns
@@ -234,6 +235,16 @@ Every once for a while brokers will perform a settlement process to finally tran
 
 The broker can connect to many custodians solutions, each custody solution have a different list of supported blockchains. The broker will benefit from supported blockchains of his custodies. Once connected to a custody, users will be able to deposit and withdraw funds from all supported blockchains.
 
+### Comparison
+
+| Criteria         | Existing solutions                                           | Yellow Network                                               |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Speed            | CEX: 50-450 ms<br />DEX: 30-120 sec                          | You have the lowest latency at any point on the globe: 10-50 ms |
+| Liquidity        | Fragmented and in competition for stacking                   | Aggregated without locking requirements, you can mine trading fees without unstacking your Assets |
+| Cross-chain      | Using bridges, extremely high risk and slow                  | Through layer-3 Virtualization, off-chain assets can remain in cold wallets but traded at low costs |
+| Decentralization | CEX: Are centralized in a data center.<br />DEX: Are located on a single chain | High, True Decentralization of business, data centers, and chains |
+
+
 # Finance
 
 ## ECN
@@ -244,13 +255,13 @@ Wikipedia:
 An electronic communication network (ECN) is a type of computerized forum or network that facilitates the trading of financial products outside traditional stock exchanges. An ECN is generally an electronic system that widely disseminates orders entered by market makers to third parties and permits the orders to be executed against in whole or in part. The primary products that are traded on ECNs are stocks and currencies. ECNs are generally passive computer-driven networks that internally match limit orders and charge a very small per share transaction fee (often a fraction of a cent per share).
 ```
 
-ECN facilitates access to brokers to global financial markets; Yellow network protocol forms a decentralized ECN for digital assets. 
+ECN facilitates access to brokers to global financial markets; Yellow network protocol forms a decentralized ECN for digital assets.
 
 ## Clearing house
 
 [PASTE DEFINITION HERE]
 
-Facilitates cross brokerage transactions; Yellow network brings this functionality using state channel technology and settlement using a smart contract. 
+Facilitates cross brokerage transactions; Yellow network brings this functionality using state channel technology and settlement using a smart contract.
 
 ## Cross-currency swap
 
