@@ -244,6 +244,8 @@ The broker can connect to many custodians solutions, each custody solution have 
 | Cross-chain      | Using bridges, extremely high risk and slow                  | Through layer-3 Virtualization, off-chain assets can remain in cold wallets but traded at low costs |
 | Decentralization | CEX: Are centralized in a data center.<br />DEX: Are located on a single chain | High, True Decentralization of business, data centers, and chains |
 
+Table: Benefits of solution
+
 
 # Finance
 
@@ -263,7 +265,15 @@ The clearinghouse enters the picture after a buyer and a seller execute a trade.
 
 ## Cross-currency swap
 
-A cross-currency swap's (XCS's) effective description is a derivative contract, agreed between two counterparts, which specifies the nature of an exchange of payments benchmarked against two interest rate indexes denominated in two different currencies. It also specifies an initial exchange of notional currency in each different currency and the terms of that repayment of notional currency over the life of the swap
+A cross-currency swap's (XCS's) effective description is a derivative contract, agreed between two counterparts, which specifies the nature of an exchange of payments benchmarked against two interest rate indexes denominated in two different currencies. It also specifies an initial exchange of notional currency in each different currency and the terms of 1that repayment of notional currency over the life of the swap
+
+|                | Number of tx | Value per tx                 | Frequency                 | Network |
+| -------------- | ------------ | ---------------------------- | ------------------------- | ------- |
+| **Trading**    | High         | Low [$100 - $1,000]          | 500-1000 times per second | Layer 3 |
+| **Clearing**   | Medium       | Medium [$10,000 - $100,000]  | Daily                     | Layer 2 |
+| **Settlement** | Low          | High [$100,000 - $1,000,000] | Weekly                    | Layer 1 |
+
+Table: Decoupling Trading, Clearing and settlement
 
 # Conclusions
 
